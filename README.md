@@ -3,7 +3,7 @@
 
 
 
-![Image of Project](../images/logo_atlantic.png)
+![Image of Project](git_tutorial/images/cheat_sheet.png)
 
 
 # 1. What is Git?
