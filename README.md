@@ -74,7 +74,7 @@ We can single out two major types of Git repositories:
 Below is a general overview of the most important commands we need to be familiar with when using git and how they all relate to each other. Don't worry if this doesn't make sense just yet, we'll get there.
 
 
-![Git Diagram](../git_tutorial/images/gitdiagram.png)
+![Git Diagram](git_tutorial/images/gitdiagram.png)
 
 
 # 4. Initializing a repository
@@ -96,7 +96,7 @@ git clone git@github.com:CoLAB-ATLANTIC/Template.git
 
 If all went well you should now see a folder similar to the following:
 
-![Git Diagram](../git_tutorial/images/git_tutorial_folder.png)
+![Git Diagram](git_tutorial/images/git_tutorial_folder.png)
 
 
 We are ready to learn git now :)
