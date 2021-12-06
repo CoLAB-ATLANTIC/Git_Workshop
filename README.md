@@ -248,6 +248,13 @@ To learn more about Git, make sure to check the following resources:
 
 ℹ️ GitHub is a website where we can store our repositories online. In other words, GitHub works with Git as a repository hosting service.
  
+# 6. Acknowledgements
+ 
+This workshop was based on:
+ 
+ - [Introduction-to-Git](https://www.notion.so/zarkom/Introduction-to-Git-ac396a0697704709a12b6a0e545db049)
+ - [Git ang Github for beginners](https://dev.to/ericawanja/git-and-github-for-beginners-33a0)
+ 
 <!--
 ### Configuring Your Name & Email
 
