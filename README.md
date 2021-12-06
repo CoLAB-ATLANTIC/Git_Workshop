@@ -3,7 +3,7 @@
 
 
 
-![Image of Project](git_tutorial/images/cheat_sheet.png)
+![Image of Project](images/cheat_sheet.png)
 
 
 # 1. What is Git?
@@ -33,7 +33,7 @@ We can single out two major types of Git repositories:
 Below is a general overview of the most important commands we need to be familiar with when using git, and how they all relate to each other. Don't worry if this doesn't make sense just yet, we'll get there.
 
 
-![Git Diagram](git_tutorial/images/gitdiagram.png)
+![Git Diagram](images/gitdiagram.png)
 
 Let's discuss the diagram briefly.
 After the user makes changes on the working file, git takes notice of the recently modified files. The modified files are **added** to a staging area which acts as the temporary location for the files.
@@ -48,7 +48,7 @@ Imagine now that the other contributors have pushed changes to the remote reposi
 
 After testing the new changes on the branch, you can integrate them with the main line of development. This act of integrating the branches to the main line of development is known as **merging**.
 
-![Branching Image](git_tutorial/images/branches.png)
+![Branching Image](images/branches.png)
 
 # 2. Setup Instructions 
 
@@ -73,11 +73,11 @@ This command will generate a hidden **.git** directory for your project, where
 
 Alternatively, you may want to use a repository that was already created by someone else and is available to be cloned. In this tutorial we will be using the Colab Template, which we have previously prepared for you. Start by clicking in 'Use this template':
 
-![gui1](git_tutorial/images/GUI_1.png)
+![gui1](images/GUI_1.png)
 
 Then, create a repository in your profile from this template:
 
-![gui1](git_tutorial/images/GUI_2.png)
+![gui1](images/GUI_2.png)
 
 And you've just successfully created your first **remote** repository! Now it's time to **clone** it into your computer, meaning you're going to create a local copy where you can perform changes! In order to do this simply go to the folder you would like to place your new project in and type the following command, replacing <username> with your username:
 
@@ -87,7 +87,7 @@ git clone git@github.com:<username>/Git_Workshop.git
 
 If all went well you should now see a folder similar to the following:
 
-![Git Diagram](git_tutorial/images/git_tutorial_folder.png)
+![Git Diagram](images/git_tutorial_folder.png)
 
 
 We are ready to learn git now :)
