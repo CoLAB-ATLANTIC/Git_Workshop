@@ -135,12 +135,12 @@ To add multiple files, we can do this:
 ```bash
 git add file.js file2.js file3.js
 ```
-
+ 
 Instead of having to add the files individually, we can also add all the files inside the project folder to the staging area:
 ```bash
 git add .
 ```
-
+ 
 By default, this adds **all the files and folders** inside the project folder to the staging area, from where they are ready to be committed and tracked.  
 
 ## 3.5. Making commits
@@ -153,16 +153,11 @@ To commit the files from the staging area, we use the following command:
 git commit -m "Commit message"
 ```
 
-Inside the quotes, we should write a **commit message** which is used to identify it in the commit history.
-
-The commit message should be a descriptive summary of the changes that you are committing to the repository.
+Inside the quotes, we should write a **commit message** which is used to identify it in the commit history. The commit message should be a descriptive summary of the changes that you are committing to the repository.
 
 After executing that command, you will get the technical details about the commit printed in the terminal. And that's basically it, you have successfully made a commit in your project!
 
-
 📌 To create a new commit, you will need to repeat the process of adding files to the staging area and then committing them after. Again, it's very useful to use the **git status** command to see which files were modified, staged, or untracked.
-
-
 
 ## 3.6. Commit history
 
@@ -181,12 +176,58 @@ git checkout <commit-hash>
 ```
 
 Replace `<commit-hash>` with the actual hash for the specific commit that you want to visit, which is listed with the `git log` command.
+ 
+## 3.6. Branches
 
-To go back to the latest commit (the newest version of our project code), you can type this command:
+A **branch** could be interpreted as an individual timeline of our project commits. With Git, we can create many of these alternative environments (i.e. we can create different **branches**) so other versions of our project code can exist and be tracked in parallel. That allows us to add new (experimental, unfinished, and potentially buggy) features in separate branches, without touching the '*official'* stable version of our project code (which is usually kept on the **main** branch).
+
+When we initialize a repository and start making commits, they are saved to the **main** branch by default.
+
+### 3.6.1. Creating a new branch
+
+You can create a new branch using the following command:
 
 ```bash
-git checkout master
+git branch -b <new-branch-name>
 ```
+
+The new branch that gets created will be the reference to the current state of your repository.
+
+### 3.6.2. Changing branches
+
+To switch to a different branch, you use the **git checkout** command:
+
+```bash
+git checkout <branch-name>
+```
+
+With that, you switch to a different isolated timeline of your project by changing branches.
+
+📌 For example, you could be working on different features in your code and have a separate branch for each feature. When you switch to a branch, you can commit code changes which only affect that particular branch. Then, you can switch to another branch to work on a different feature, which won't be affected by the changes and commits made from the previous branch.
+ 
+ ℹ️ To list the branches for your project, use this command: `git branch`
+
+### 3.6.3. Merging branches
+
+You can merge branches in situations where you want to implement the code changes that you made in an individual branch to a different branch. For example, after you fully implemented and tested a new feature in your code, you would want to merge those changes to the stable branch of your project (which is usually the default **main** branch).
+
+To merge the changes from a different branch into your current branch, you can use this command:
+
+```bash
+git merge <branch-name>
+```
+
+You would replace `<branch-name>` with the branch that you want to integrate into your current branch.
+
+### 3.6.4. Deleting a branch
+
+To delete a branch, you can run the **git branch** command with the **-d** flag:
+
+```bash
+git branch -d <branch-name>
+```
+
+ℹ️ Read more about branching and merging [on this link](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
 
 # 4. Ignoring files
 
@@ -206,117 +247,8 @@ To learn more about Git, make sure to check the following resources:
 
 
 ℹ️ GitHub is a website where we can store our repositories online. In other words, GitHub works with Git as a repository hosting service.
-
-<!-- # 5. Branches
-
-A **branch** could be interpreted as an individual timeline of our project commits.
-
-With Git, we can create many of these alternative environments (i.e. we can create different **branches**) so other versions of our project code can exist and be tracked in parallel.
-
-That allows us to add new (experimental, unfinished, and potentially buggy) features in separate branches, without touching the '*official'* stable version of our project code (which is usually kept on the **master** branch).
-
-When we initialize a repository and start making commits, they are saved to the **master** branch by default.
-
-## 5.1. Creating a new branch
-
-You can create a new branch using the following command:
-
-```bash
-git branch <new-branch-name>
-```
-
-The new branch that gets created will be the reference to the current state of your repository.
-
-
-📌 It's a good idea to create a **development** branch where you can work on improving your code, adding new experimental features, and similar. After development and testing these new features to make sure they don't have any bugs and that they can be used, you can merge them to the master branch.
-
-
-
-## 5.2. Changing branches
-
-To switch to a different branch, you use the **git checkout** command:
-
-```bash
-git checkout <branch-name>
-```
-
-With that, you switch to a different isolated timeline of your project by changing branches.
-
-
-📌 For example, you could be working on different features in your code and have a separate branch for each feature. When you switch to a branch, you can commit code changes which only affect that particular branch. Then, you can switch to another branch to work on a different feature, which won't be affected by the changes and commits made from the previous branch.
-
-
-
-To create a new branch and change to it at the same time, you can use the **-b** flag:
-
-```bash
-git checkout -b <new-branch-name>
-```
-
-
-ℹ️ To list the branches for your project, use this command: `git branch`
-
-
-
-To go back to the **master** branch, use this command:
-
-```bash
-git checkout master
-```
-
-## 5.3. Merging branches
-
-You can merge branches in situations where you want to implement the code changes that you made in an individual branch to a different branch.
-
-For example, after you fully implemented and tested a new feature in your code, you would want to merge those changes to the stable branch of your project (which is usually the default **master** branch).
-
-To merge the changes from a different branch into your current branch, you can use this command:
-
-```bash
-git merge <branch-name>
-```
-
-You would replace `<branch-name>` with the branch that you want to integrate into your current branch.
-
-## 5.4. Deleting a branch
-
-To delete a branch, you can run the **git branch** command with the **-d** flag:
-
-```bash
-git branch -d <branch-name>
-```
-
-
-ℹ️ Read more about branching and merging [on this link](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
-
- -->
  
- 
-<!-- However, we first need to make sure that we have Git installed on our computers.
-
-ℹ️ You can download Git here: [https://git-scm.com/downloads](https://git-scm.com/downloads)
-
-
-Click the download link for your specific operating system and then follow through the installation wizard to get things set up on your computer!
-
-After installing it, start your terminal and type the following command to verify that Git is ready to be used on your computer:
-
-```bash
-git --version
-```
-
-If everything went well, it should return the Git version that is installed on your computer.
-
-
-<img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/094d32ef-20c1-421d-944b-200ec14f150b/apple.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/094d32ef-20c1-421d-944b-200ec14f150b/apple.png" width="40px" /> If you are using a Mac or Linux machine, then you can utilize the default Bash terminal that comes pre-installed on your machine.
-
-
-
-
-<img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/32663572-2b24-4079-bf3f-29f2146d2b56/windows.ico" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/32663572-2b24-4079-bf3f-29f2146d2b56/windows.ico" width="40px" /> If you are using Windows, you can use its built-in Powershell terminal, or the Git Bash terminal which is bundled with the Git installation. For detailed windows Git and Git Bash install instructions, check out this blog post: [https://zarkom.net/blogs/how-to-install-git-and-git-bash-on-windows-9140](https://zarkom.net/blogs/how-to-install-git-and-git-bash-on-windows-9140)
-
-
-
+<!--
 ### Configuring Your Name & Email
 
 In your terminal, run the following commands to identify yourself with Git:
